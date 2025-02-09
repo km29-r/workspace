@@ -1,0 +1,44 @@
+package com.example.contactapp.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.contactapp.entity.Contact;
+import com.example.contactapp.repository.ContactRepository;
+
+@Service //springに「これはサービスクラスですよ」と伝えるアノテーション
+public class ContactService {
+	private final ContactRepository contactRepository; //ContactRepository　リポジトリを利用してデータ操作
+	
+	//コンストラクタでリポジトリを注入（StringのDI）
+	public ContactService(ContactRepository contactRepository) {
+		this.contactRepository = contactRepository;
+	}
+	
+	//お問い合わせを全取得　getAll　DBのデータを全部取得
+	public List<Contact> getAllContacts(){//<Contact>はジェネリクスという機能。リストの中に入るデータの型を指定するために使う
+		return contactRepository.findAll();
+	}
+	
+	//お問い合わせを追加　create　DBにデータを保存　新規作成
+	public Contact createContact(Contact contact) {
+		return contactRepository.save(contact);
+	}
+	
+	//IDでお問い合わせを取得　特定のデータを取得　get
+	public Contact getContactById(Long id) {
+		return contactRepository.findById(id).orElse(null);
+	}
+	
+	//お問い合わせを削除　IDを指定して削除　delete
+	public void deleteContact(Long id) {
+		contactRepository.deleteById(id);
+	}
+
+	public Contact updateContact(Long id, Contact contact) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+}

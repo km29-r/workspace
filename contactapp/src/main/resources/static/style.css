@@ -1,0 +1,37 @@
+/* 全体のスタイル設定 */
+body {
+    font-family: Arial, sans-serif; /* フォントを設定 */
+    max-width: 400px; /* 最大幅を400pxにする */
+    margin: 20px auto; /* 上下に20pxの余白を入れ、中央寄せ */
+}
+
+/* ラベル（名前・メール・問い合わせ内容の見出し）の設定 */
+label {
+    display: block; /* ブロック要素にして、次の要素を改行 */
+    margin-top: 10px; /* 上に10pxの余白 */
+}
+
+/* 入力欄（名前・メール）のデザイン */
+input, textarea {
+    width: 100%; /* 幅を100%にする */
+    padding: 8px; /* 内側に余白を入れる */
+    margin-top: 5px; /* 上に5pxの余白 */
+    border: 1px solid #ccc; /* 枠線を薄いグレーにする */
+    border-radius: 4px; /* 角を少し丸める */
+}
+
+/* 送信ボタンのデザイン */
+button {
+    margin-top: 10px; /* 上に10pxの余白 */
+    padding: 10px; /* 内側の余白 */
+    background-color: blue; /* ボタンの背景色 */
+    color: white; /* 文字の色 */
+    border: none; /* 枠線なし */
+    cursor: pointer; /* カーソルをポインターにする */
+    border-radius: 4px; /* 角を少し丸める */
+}
+
+/* ボタンにカーソルを合わせたときの色変更 */
+button:hover {
+    background-color: darkblue;
+}

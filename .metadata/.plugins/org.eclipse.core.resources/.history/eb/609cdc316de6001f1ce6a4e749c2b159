@@ -1,0 +1,8 @@
+package com.example.contactapp.controller;
+import java.util.List;
+
+@RestController //このクラスがAPIのコントローラーであることを示す
+@RequestMapping("/contacts") //このコントローラーのAPIのURLを"/contacts"に設定
+public class ContactController {
+
+}

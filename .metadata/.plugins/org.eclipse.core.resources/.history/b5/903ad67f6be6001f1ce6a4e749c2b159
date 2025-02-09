@@ -1,0 +1,32 @@
+package com.example.contactapp.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.contactapp.entity.Contact;
+import com.example.contactapp.repository.ContactRepository;
+
+@Service
+public class ContactService {
+	private final ContactRepository contactRepository;
+	
+	//コンストラクタでリポジトリを注入（StringのDI）
+	public ContactService(ContactRepository contactRepository) {
+		this.contactRepository = contactRepository;
+	}
+	
+	//お問い合わせを全取得
+	public List<Contact> getAllcontacts(){
+		return contactRepository.findAll();
+	}
+	
+	//お問い合わせを追加
+	public Contact createContact(Contact contact) {
+		return contactRepository.save(contact);
+	}
+	
+	//お問い合わせを追加
+	public Contact getContact(Contact contact) {
+		return contactRepository.findById(id).orElse(null);
+	}
+
+}

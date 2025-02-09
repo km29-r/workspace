@@ -1,0 +1,13 @@
+package com.example.contactapp.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.contactapp.entity.Contact;
+
+@Repository //Springに「これはリポジトリですよ」と伝えるアノテーション
+public interface ContactRepository extends JpaRepository<Contact, Long> { 
+	//Contactエンティティを扱うリポジトリを作成し、IDの方はLong
+	//追加の検索メソッドが必要ならここに記述
+}
+//findAll() save()などの基本的なデータ操作が自動で使えるので、SQLを書かなくてもOK

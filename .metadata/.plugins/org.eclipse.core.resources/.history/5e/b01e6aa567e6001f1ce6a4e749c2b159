@@ -1,0 +1,21 @@
+package com.example.contactapp.entity;
+
+import jakarta.persistence.Entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity//テーブルのデータベースとして扱う
+@Table(name = "contacts")
+public class Contact {
+
+    private Long id;
+
+    private String name;
+
+    private String email;
+
+    private String message;
+}

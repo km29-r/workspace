@@ -1,0 +1,22 @@
+package com.example.contactapp.controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.contactapp.service.ContactService;
+
+@RestController //このクラスがAPIのコントローラーであることを示す
+@RequestMapping("/contacts") //このコントローラーのAPIのURLを"/contacts"に設定
+public class ContactController {
+	
+	private final ContactService contactservice;
+	
+	//コンストラクタを使ってServiceを受け取る
+	public ContactController(ContactService contactService) {
+		this.contactservice = contactService;
+	}
+	
+	//すべての問い合わせを取得するAPI（GET /contacts)
+	@GetMapping
+	
+
+}

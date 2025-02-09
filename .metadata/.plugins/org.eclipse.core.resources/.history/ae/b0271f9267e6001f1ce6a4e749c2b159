@@ -1,0 +1,18 @@
+package com.example.contactapp.entity;
+
+import lombok.Getter;
+
+@Getter
+@Setter
+@Entity//テーブルのデータベースとして扱う
+@Table(name"contacts")
+public class Contact {
+
+    private Long id;
+
+    private String name;
+
+    private String email;
+
+    private String message;
+}
